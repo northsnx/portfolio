@@ -1,0 +1,978 @@
+{
+    "en": {
+        "name": "North Thanaphat Sirithep",
+        "title": "Computer Engineering Student at Sripatum University",
+        "quote": "\"An investment in knowledge pays the best interest.\" - Benjamin Franklin -",
+        "quote2": "Always “available” (well... not really, but let’s pretend 🤣).\nHit me up if you’ve got a cool job 💼, a wild project idea 💡, or just wanna geek out about tech 🖥️☕.\nReach out through the platforms below — reply speed may vary depending on whether I’m coding or napping😴.",
+        "hero": {
+            "name": "Hi, I'm THANAPHAT SIRITHEP (NORTH) 🚀",
+            "edu": "Computer Engineering Student at Sripatum University (Expected 2026, GPA 3.30)",
+            "about": "I love breaking bugs (sometimes accidentally creating them too 😅). I tinker with Front-end, Mobile Apps, and Cloud stuff. Built projects like Sakdee Care+ Laundry App, and there’s more fun stuff in the pipeline.",
+            "about2": "Currently hunting role Website Developer & Software Engineer for a Co-op spot (Jan 5 – Apr 24, 2026) — so if you’ve got code to throw at me, I’ll catch it with style… and caffeine ☕😎."
+        },
+        "skill": [
+            {
+                "name": "HTML",
+                "icon": "fa-brands fa-html5"
+            },
+            {
+                "name": "CSS",
+                "icon": "fa-brands fa-css3-alt"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "fa-brands fa-js"
+            },
+            {
+                "name": "React",
+                "icon": "fa-brands fa-react"
+            },
+            {
+                "name": "React Native",
+                "icon": "fa-brands fa-react"
+            },
+            {
+                "name": "Bootstrap",
+                "icon": "fa-brands fa-bootstrap"
+            },
+            {
+                "name": "Tailwind",
+                "icon": "fa-solid fa-wind"
+            },
+            {
+                "name": "daisy",
+                "icon": "fa-solid fa-seedling"
+            },
+            {
+                "name": "Node.js",
+                "icon": "fa-brands fa-node"
+            },
+            {
+                "name": "SQL / MySQL",
+                "icon": "fa-solid fa-database"
+            },
+            {
+                "name": "MongoDB",
+                "icon": "fa-solid fa-database"
+            },
+            {
+                "name": "Firebase",
+                "icon": "fa-solid fa-fire-flame-curved"
+            },
+            {
+                "name": "Azure",
+                "icon": "fa-brands fa-microsoft"
+            },
+            {
+                "name": "Postman",
+                "icon": "fa-solid fa-paper-plane"
+            },
+            {
+                "name": "Docker",
+                "icon": "fa-brands fa-docker"
+            },
+            {
+                "name": "Git",
+                "icon": "fa-brands fa-git-alt"
+            },
+            {
+                "name": "GitHub",
+                "icon": "fa-brands fa-github"
+            },
+            {
+                "name": "VS Code",
+                "icon": "fa-solid fa-code"
+            },
+            {
+                "name": "Docker",
+                "icon": "fa-brands fa-docker"
+            },
+            {
+                "name": "C",
+                "icon": "fa-solid fa-c"
+            },
+            {
+                "name": "C++",
+                "icon": "fas fa-plus-square"
+            },
+            {
+                "name": "C#",
+                "icon": "fas fa-hashtag"
+            },
+            {
+                "name": "Python",
+                "icon": "fa-brands fa-python"
+            },
+            {
+                "name": "Linux",
+                "icon": "fa-brands fa-linux"
+            },
+            {
+                "name": "Arduino",
+                "icon": "fa-solid fa-microchip"
+            }
+        ],
+        "projects": [
+            {
+                "name": "ExtendX Developer",
+                "desc": "Designed and developed an application to help users understand and interpret laundry care symbols on clothing labels.",
+                "desc-full": "Designed and developed an application to help users understand and interpret laundry care symbols on clothing labels. The app includes a visual guide, interactive examples, and a tutorial section. Implemented responsive design with HTML, CSS, and JavaScript to ensure accessibility on both desktop and mobile devices. Users can scan laundry labels with their phone camera and get instant care instructions. The project improves laundry handling efficiency and reduces clothing damage.",
+                "tags": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Web App",
+                    "Mobile Friendly",
+                    "Interactive UI"
+                ],
+                "img": "https://northsnx.github.io/ExtendX/scr/ExtendX-logo.png",
+                "link": "https://northsnx.github.io/ExtendX",
+                "keyword": [
+                    {
+                        "title": "Laundry Care",
+                        "desc": "Helps users understand clothing care symbols to prevent damage and extend clothing lifespan."
+                    },
+                    {
+                        "title": "Interactive Guide",
+                        "desc": "Provides visual examples and tutorials for easier comprehension."
+                    },
+                    {
+                        "title": "Responsive Design",
+                        "desc": "Accessible on both desktop and mobile devices."
+                    },
+                    {
+                        "title": "Label Scanning",
+                        "desc": "Users can scan labels via phone camera to get instant instructions."
+                    }
+                ]
+            },
+            {
+                "name": "Sakdee Care+",
+                "desc": "Built a mobile app to assist users in understanding and interpreting laundry care symbols, with integrated map, weather, and cloud services.",
+                "desc-full": "Developed a comprehensive mobile app for laundry guidance. Integrates Google Maps API to locate nearby stores, Firebase for cloud data storage, and real-time weather API to recommend optimal laundry times. Users can scan labels, view tutorials, and get notifications for laundry care. Built using React Native and Expo for cross-platform compatibility.",
+                "tags": [
+                    "React Native",
+                    "Expo",
+                    "API",
+                    "Firebase",
+                    "Google Maps API",
+                    "Bootstrap",
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Mobile App",
+                    "Cloud"
+                ],
+                "img": "https://img5.pic.in.th/file/secure-sv1/85e97ccf28158d1990a0c0577db31cdc.png",
+                "link": "https://northsnx.github.io/SAKDEE.App",
+                "keyword": [
+                    {
+                        "title": "Laundry Guidance",
+                        "desc": "Provides tutorials and label scanning features to help users understand clothing care symbols and improve laundry habits."
+                    },
+                    {
+                        "title": "Weather Integration",
+                        "desc": "Integrates a real-time weather API to recommend the best times for doing laundry based on forecast conditions."
+                    },
+                    {
+                        "title": "Store Locator",
+                        "desc": "Uses Google Maps API to help users find nearby laundry service stores quickly and easily."
+                    },
+                    {
+                        "title": "Cloud & Cross-Platform",
+                        "desc": "Built with React Native and Expo for cross-platform support, with Firebase for secure and scalable cloud data storage."
+                    }
+                ]
+            },
+            {
+                "name": "Sakdee Go+",
+                "desc": "A fun travel web app where users can log visited provinces in Thailand and generate shareable images for social media.",
+                "desc-full": "Created a travel web application where users can track visited provinces in Thailand. The app allows users to mark locations, generate personalized maps, and share achievements on social media. Implemented with HTML, CSS, and JavaScript, featuring an interactive map and responsive design suitable for both desktop and mobile users.",
+                "tags": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Web App",
+                    "Interactive Map",
+                    "Social Sharing"
+                ],
+                "img": "https://img5.pic.in.th/file/secure-sv1/sakdee-visited-map-44.png",
+                "link": "https://northsnx.github.io/SAKDEE.Go",
+                "keyword": [
+                    {
+                        "title": "Travel Tracker",
+                        "desc": "Users can mark visited provinces and track their travel journey."
+                    },
+                    {
+                        "title": "Social Media Sharing",
+                        "desc": "Generate shareable images to post achievements online."
+                    },
+                    {
+                        "title": "Interactive Map",
+                        "desc": "Responsive and interactive maps for better user experience."
+                    }
+                ]
+            },
+            {
+                "name": "Expo Image Picker Project",
+                "desc": "Developed a React Native app for selecting images and using the camera, as a hands-on learning project in class.",
+                "desc-full": "Built a React Native application to practice using device cameras and image picker functionality. Users can take photos or select images from their gallery and preview them within the app. Implemented using Expo SDK and tested on both Android and iOS devices. The project helped enhance understanding of mobile UI, permissions handling, and image management.",
+                "tags": [
+                    "React Native",
+                    "Expo",
+                    "Camera",
+                    "Image Picker",
+                    "Mobile App",
+                    "UI"
+                ],
+                "img": "https://img5.pic.in.th/file/secure-sv1/YOUTUBE-VDO-COVER-PAGE.png",
+                "link": "https://youtu.be/1dbrWPKALRw",
+                "keyword": [
+                    {
+                        "title": "Camera Integration",
+                        "desc": "Use device camera to capture images within the app."
+                    },
+                    {
+                        "title": "Image Management",
+                        "desc": "Select, preview, and handle images efficiently."
+                    },
+                    {
+                        "title": "Learning Project",
+                        "desc": "Hands-on practice for React Native and Expo features."
+                    }
+                ]
+            },
+            {
+                "name": "CPE406 Weather Station",
+                "desc": "Developed a weather forecasting website that displays current and future conditions using the OpenWeatherMap API in an easy-to-read interface.",
+                "desc-full": "Designed and implemented a weather station project using ESP8266 and DHT11 sensors to collect temperature and humidity data. Developed a web dashboard with Node.js, Express, and MongoDB to display real-time and forecast weather information. The interface is user-friendly and responsive, allowing users to monitor conditions from any device. Integrated OpenWeatherMap API to enhance forecasting accuracy.",
+                "tags": [
+                    "Azure",
+                    "ESP8266",
+                    "DHT11",
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "API",
+                    "MongoDB",
+                    "Node.js",
+                    "Express",
+                    "Arduino IDE",
+                    "IoT",
+                    "Web Dashboard",
+                    "Sensor"
+                ],
+                "img": "https://static.wixstatic.com/media/eb3c37_e23e576dba4e46138298f288a8f65519~mv2.png/v1/fit/w_1716,h_716,q_90,enc_avif,quality_auto/eb3c37_e23e576dba4e46138298f288a8f65519~mv2.png",
+                "link": "https://github.com/northsnx/CPE406-IoT-TempAndHum",
+                "keyword": [
+                    {
+                        "title": "IoT Weather Station",
+                        "desc": "Collects temperature and humidity data using ESP8266 and DHT11 sensors."
+                    },
+                    {
+                        "title": "Web Dashboard",
+                        "desc": "Displays real-time and forecasted weather information with responsive design."
+                    },
+                    {
+                        "title": "API Integration",
+                        "desc": "Uses OpenWeatherMap API to enhance weather forecasting accuracy."
+                    }
+                ]
+            },
+            {
+                "name": "CPE243 Light Walking Robot with LDR",
+                "desc": "Created a robot car that detects and follows light sources using LDR sensors to measure light intensity.",
+                "desc-full": "Built a walking robot equipped with LDR sensors to detect and follow light sources. Implemented logic circuits and motor control to adjust movement according to light intensity. The project demonstrates basic robotics, electronics principles, and sensor-based navigation. Ideal for learning sensor integration and automated motion control.",
+                "tags": [
+                    "Robot",
+                    "Logic",
+                    "Electronics",
+                    "LDR Module",
+                    "Sensors",
+                    "Automation"
+                ],
+                "img": "https://i.ytimg.com/vi/rpPD_dvm6P0/maxresdefault.jpg",
+                "link": "https://youtu.be/rpPD_dvm6P0",
+                "keyword": [
+                    {
+                        "title": "Light Following",
+                        "desc": "Robot uses LDR sensors to detect and follow light sources."
+                    },
+                    {
+                        "title": "Sensor Integration",
+                        "desc": "Demonstrates integration of electronics sensors with motion control."
+                    },
+                    {
+                        "title": "Robotics Learning",
+                        "desc": "Good project to understand basic robotics and automation principles."
+                    }
+                ]
+            },
+            {
+                "name": "CPE345 Control RGB LED with Potentiometer",
+                "desc": "Developed a project to control RGB LED colors using potentiometers to adjust red, green, and blue intensity via an ESP32 board.",
+                "desc-full": "Created an interactive RGB LED control system using ESP32 and potentiometers. Users can adjust red, green, and blue channels independently to create custom colors. Built using Blynk app for remote control and monitoring. This project strengthens understanding of IoT devices, analog input handling, and real-time LED manipulation.",
+                "tags": [
+                    "ESP32",
+                    "Potentiometer",
+                    "IoT",
+                    "Blynk",
+                    "RGB LED",
+                    "Electronics"
+                ],
+                "img": "https://i.ytimg.com/vi/byqDhYDtZZ0/maxresdefault.jpg",
+                "link": "https://youtu.be/byqDhYDtZZ0",
+                "keyword": [
+                    {
+                        "title": "RGB LED Control",
+                        "desc": "Adjust LED colors using potentiometers for red, green, and blue channels."
+                    },
+                    {
+                        "title": "IoT Integration",
+                        "desc": "Controlled via ESP32 and Blynk app for remote monitoring."
+                    },
+                    {
+                        "title": "Interactive Electronics",
+                        "desc": "Hands-on project for learning analog input and real-time manipulation."
+                    }
+                ]
+            },
+            {
+                "name": "CPE212 Voltmeter",
+                "desc": "Designed a voltmeter project to measure electrical voltage using ESP8266 (NodeMCU 1.0 V3) and Arduino, supporting a 0–24V range.",
+                "desc-full": "Developed a digital voltmeter using ESP8266 and Arduino to measure electrical voltage ranging from 0 to 24V. The system displays voltage readings on a web interface and supports remote monitoring. Project demonstrates practical electronics, IoT integration, and real-time data visualization.",
+                "tags": [
+                    "ESP8266",
+                    "IoT",
+                    "Arduino",
+                    "Arduino IDE",
+                    "Electronics",
+                    "Voltmeter",
+                    "Web Dashboard",
+                    "Visualization"
+                ],
+                "img": "https://i.ytimg.com/vi/kN53lsdMt50/maxresdefault.jpg",
+                "link": "https://youtu.be/kN53lsdMt50",
+                "keyword": [
+                    {
+                        "title": "Digital Voltmeter",
+                        "desc": "Measures electrical voltage in 0–24V range accurately."
+                    },
+                    {
+                        "title": "Web Monitoring",
+                        "desc": "Displays voltage readings on a web dashboard for remote access."
+                    },
+                    {
+                        "title": "IoT Data Visualization",
+                        "desc": "Integrates IoT devices for real-time measurement and visualization."
+                    }
+                ]
+            },
+            {
+                "name": "CPE121 Smart Plug",
+                "desc": "Built a smart plug on ESP32 to remotely control electrical devices while improving safety and energy efficiency.",
+                "desc-full": "Implemented a smart plug system using ESP32 to allow remote control of electrical devices via mobile app. Integrated with Blynk IoT platform to monitor energy consumption and automate device schedules. The project enhances safety, reduces energy waste, and provides a hands-on experience with IoT hardware and cloud services.",
+                "tags": [
+                    "ESP32",
+                    "Wokwi",
+                    "Arduino",
+                    "Arduino IDE",
+                    "Blynk",
+                    "IoT",
+                    "Smart Plug",
+                    "Energy Monitoring",
+                    "Automation"
+                ],
+                "img": "https://img2.pic.in.th/pic/YOUTUBE-VDO-COVER-PAGE-1.png",
+                "link": "-",
+                "keyword": [
+                    {
+                        "title": "Remote Control",
+                        "desc": "Control electrical devices via mobile app using ESP32."
+                    },
+                    {
+                        "title": "Energy Monitoring",
+                        "desc": "Track and optimize energy consumption for efficiency."
+                    },
+                    {
+                        "title": "IoT & Automation",
+                        "desc": "Automates device schedules and integrates with cloud services."
+                    }
+                ]
+            }
+        ],
+        "certificate": [
+            {
+                "name": "Gemini Certified Educator",
+                "company": "Google",
+                "issued": "18 Sep 2025",
+                "expires": "17 Sep 2028",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_7a045460c3004f4ca921e5b7f6a1200d~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "Software Engineer Intern",
+                "company": "HackerRank",
+                "issued": "28 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_7c324a12774041efa5d2bbe536df8f10~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "Software Engineer",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_65a6f05cd2de4971bbab98dee80d1d9f~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "SQL (Basic)",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_c0ce1eeceb404b77b2720516b2de8b5a~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "React (Basic)",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_0c2dbeb721bc4e04b6120f6a2aeca9ed~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "C# (Basic)",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_ff6b054b7b8e40698e5b0cd1de6a04bb~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            }
+        ],
+        "contact": [
+            {
+                "name": "email",
+                "icon": "fa-solid fa-envelope",
+                "link": "mailto:thanaphat.sir@spumail.net",
+                "desc": "Reach me via email  \n thanphat.sir@spumail.net",
+                "btn": "spumail.net"
+            },
+            {
+                "name": "linkedin",
+                "icon": "fa-brands fa-linkedin",
+                "link": "https://www.linkedin.com/in/northsiri/",
+                "desc": "Connect with me on LinkedIn",
+                "btn": "@northsiri"
+            },
+            {
+                "name": "github",
+                "icon": "fa-brands fa-github",
+                "link": "https://github.com/northsnx",
+                "desc": "Explore my projects on GitHub",
+                "btn": "@northsnx"
+            },
+            {
+                "name": "Resume",
+                "icon": "fa-solid fa-file",
+                "link": "./assets/SuperResume-northsnx.pdf",
+                "desc": "Get my latest resume",
+                "btn": "Download PDF"
+            },
+            {
+                "name": "Old Portfolio",
+                "icon": "fa-regular fa-address-book",
+                "link": "https://northsnx.wixsite.com/northnaphat",
+                "desc": "Check out my previous portfolio",
+                "btn": "northsnx.wixsite"
+            }
+        ]
+    },
+    "th": {
+        "name": "นอร์ท ธนภัทร ศิริเทพ",
+        "title": "นักศึกษาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยศรีปทุม",
+        "quote": "\"การลงทุนในความรู้ให้ผลตอบแทนดีที่สุด\" - Benjamin Franklin -",
+        "quote2": "พร้อมเสมอ (เอ่อ… จริง ๆ ก็ไม่ค่อยนะ แต่เอาเถอะ)😆 \nติดต่อได้ถ้าคุณมีงานเจ๋ง ๆ 💼, ไอเดียโปรเจกต์บ้า ๆ 💡, หรือแค่จะมาคุยเรื่องเทคโนโลยี 🖥️☕\nสามารถทักผ่านแพลตฟอร์มด้านล่าง — ตอบช้าบ้างเร็วบ้าง ขึ้นอยู่กับว่ากำลังโค้ดหรือกำลังงีบ 😴",
+        "hero": {
+            "name": "สวัสดี! ผมชื่อ นายธนภัทร ศิริเทพ (นอร์ท) 🚀",
+            "edu": "นักศึกษาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยศรีปทุม (คาดว่าจะจบ 2026, GPA 3.30)",
+            "about": "ผมชอบแก้บัค (บางทีก็สร้างเองโดยไม่ตั้งใจ 😅) ชอบเล่นกับ Front-end, Mobile Apps และ Cloud Projects สร้างโปรเจกต์อย่าง Sakdee Care+ Laundry App และยังมีโปรเจกต์สนุก ๆ รออยู่ข้างหน้า",
+            "about2": "ตอนนี้กำลังหาตำแหน่ง Website Developer & Software Engineer สำหรับ Co-op (5 ม.ค.–24 เม.ย. 2026) — ถ้ามีโค้ดให้ลองโยนมา ผมพร้อมรับแบบมีสไตล์… พร้อมกาแฟ ☕😎"
+        },
+        "skill": [
+            {
+                "name": "HTML",
+                "icon": "fa-brands fa-html5"
+            },
+            {
+                "name": "CSS",
+                "icon": "fa-brands fa-css3-alt"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "fa-brands fa-js"
+            },
+            {
+                "name": "React",
+                "icon": "fa-brands fa-react"
+            },
+            {
+                "name": "React Native",
+                "icon": "fa-brands fa-react"
+            },
+            {
+                "name": "Bootstrap",
+                "icon": "fa-brands fa-bootstrap"
+            },
+            {
+                "name": "Tailwind",
+                "icon": "fa-solid fa-wind"
+            },
+            {
+                "name": "daisyUI",
+                "icon": "fa-solid fa-seedling"
+            },
+            {
+                "name": "Node.js",
+                "icon": "fa-brands fa-node"
+            },
+            {
+                "name": "SQL / MySQL",
+                "icon": "fa-solid fa-database"
+            },
+            {
+                "name": "MongoDB",
+                "icon": "fa-solid fa-database"
+            },
+            {
+                "name": "Firebase",
+                "icon": "fa-solid fa-fire-flame-curved"
+            },
+            {
+                "name": "Azure",
+                "icon": "fa-brands fa-microsoft"
+            },
+            {
+                "name": "Postman",
+                "icon": "fa-solid fa-paper-plane"
+            },
+            {
+                "name": "Docker",
+                "icon": "fa-brands fa-docker"
+            },
+            {
+                "name": "Git",
+                "icon": "fa-brands fa-git-alt"
+            },
+            {
+                "name": "GitHub",
+                "icon": "fa-brands fa-github"
+            },
+            {
+                "name": "VS Code",
+                "icon": "fa-solid fa-code"
+            },
+            {
+                "name": "C",
+                "icon": "fa-solid fa-c"
+            },
+            {
+                "name": "C++",
+                "icon": "fas fa-plus-square"
+            },
+            {
+                "name": "C#",
+                "icon": "fas fa-hashtag"
+            },
+            {
+                "name": "Python",
+                "icon": "fa-brands fa-python"
+            },
+            {
+                "name": "Linux",
+                "icon": "fa-brands fa-linux"
+            },
+            {
+                "name": "Arduino",
+                "icon": "fa-solid fa-microchip"
+            }
+        ],
+        "projects": [
+            {
+                "name": "ExtendX Developer",
+                "desc": "ออกแบบและพัฒนาแอปพลิเคชันช่วยให้ผู้ใช้เข้าใจสัญลักษณ์การดูแลเสื้อผ้า",
+                "desc-full": "ออกแบบและพัฒนาแอปพลิเคชันช่วยให้ผู้ใช้เข้าใจและตีความสัญลักษณ์การดูแลเสื้อผ้า มีไกด์แบบภาพ, ตัวอย่างโต้ตอบ, และบทเรียน รวมถึงรองรับ Desktop และ Mobile ผ่าน HTML, CSS, JavaScript ผู้ใช้สามารถสแกนฉลากเสื้อผ้าและรับคำแนะนำทันที เพื่อช่วยลดความเสียหายต่อเสื้อผ้า",
+                "tags": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Web App",
+                    "Mobile Friendly",
+                    "Interactive UI"
+                ],
+                "img": "https://northsnx.github.io/ExtendX/scr/ExtendX-logo.png",
+                "link": "https://northsnx.github.io/ExtendX",
+                "keyword": [
+                    {
+                        "title": "การดูแลเสื้อผ้า",
+                        "desc": "ช่วยให้ผู้ใช้เข้าใจสัญลักษณ์การดูแลเพื่อป้องกันความเสียหายและยืดอายุการใช้งาน"
+                    },
+                    {
+                        "title": "คู่มือโต้ตอบ",
+                        "desc": "ให้ตัวอย่างและบทเรียนแบบภาพเพื่อความเข้าใจง่าย"
+                    },
+                    {
+                        "title": "Responsive Design",
+                        "desc": "เข้าถึงได้ทั้ง Desktop และ Mobile"
+                    },
+                    {
+                        "title": "สแกนฉลาก",
+                        "desc": "ผู้ใช้สามารถสแกนฉลากเพื่อรับคำแนะนำทันที"
+                    }
+                ]
+            },
+            {
+                "name": "Sakdee Care+",
+                "desc": "แอปมือถือสำหรับช่วยผู้ใช้ดูแลเสื้อผ้า พร้อมฟีเจอร์แผนที่, สภาพอากาศ และ Cloud",
+                "desc-full": "พัฒนาแอปมือถือครบวงจรสำหรับคำแนะนำการดูแลเสื้อผ้า รวม Google Maps API เพื่อค้นหาสาขา, Firebase สำหรับเก็บข้อมูล, และ API สภาพอากาศเรียลไทม์เพื่อแนะนำเวลาที่เหมาะสม ผู้ใช้สามารถสแกนฉลาก ดูบทเรียน และรับแจ้งเตือน สำหรับ iOS/Android ด้วย React Native และ Expo",
+                "tags": [
+                    "React Native",
+                    "Expo",
+                    "API",
+                    "Firebase",
+                    "Google Maps API",
+                    "Bootstrap",
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Mobile App",
+                    "Cloud"
+                ],
+                "img": "https://img5.pic.in.th/file/secure-sv1/85e97ccf28158d1990a0c0577db31cdc.png",
+                "link": "https://northsnx.github.io/SAKDEE.App",
+                "keyword": [
+                    {
+                        "title": "คำแนะนำซักผ้า",
+                        "desc": "สอนผู้ใช้สแกนฉลากและเรียนรู้วิธีดูแลเสื้อผ้า"
+                    },
+                    {
+                        "title": "สภาพอากาศเรียลไทม์",
+                        "desc": "แนะนำเวลาซักผ้าตามพยากรณ์"
+                    },
+                    {
+                        "title": "ค้นหาสาขา",
+                        "desc": "ใช้ Google Maps API ค้นหาสาขาใกล้บ้าน"
+                    },
+                    {
+                        "title": "Cross-Platform & Cloud",
+                        "desc": "รองรับ iOS/Android และเก็บข้อมูลบน Firebase"
+                    }
+                ]
+            },
+            {
+                "name": "Sakdee Go+",
+                "desc": "เว็บแอปท่องเที่ยวบันทึกจังหวัดที่เคยไป พร้อมแชร์ภาพลงโซเชียล",
+                "desc-full": "สร้างเว็บแอปท่องเที่ยว ผู้ใช้สามารถติดตามจังหวัดที่เคยไป ทำแผนที่ส่วนตัว และแชร์บนโซเชียล มี Map โต้ตอบและ Responsive Design สำหรับ Desktop/ Mobile",
+                "tags": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Web App",
+                    "Interactive Map",
+                    "Social Sharing"
+                ],
+                "img": "https://img5.pic.in.th/file/secure-sv1/sakdee-visited-map-44.png",
+                "link": "https://northsnx.github.io/SAKDEE.Go",
+                "keyword": [
+                    {
+                        "title": "ติดตามการเดินทาง",
+                        "desc": "ผู้ใช้สามารถบันทึกจังหวัดที่เคยไป"
+                    },
+                    {
+                        "title": "แชร์โซเชียล",
+                        "desc": "สร้างภาพสำหรับแชร์บนโซเชียล"
+                    },
+                    {
+                        "title": "Map โต้ตอบ",
+                        "desc": "Interactive และ Responsive เพื่อประสบการณ์ที่ดี"
+                    }
+                ]
+            },
+            {
+                "name": "Expo Image Picker Project",
+                "desc": "แอป React Native ฝึกใช้งานกล้องและเลือกภาพ",
+                "desc-full": "สร้างแอป React Native สำหรับทดลองใช้งานกล้องและเลือกภาพจาก Gallery ผู้ใช้สามารถถ่ายหรือเลือกภาพและดูตัวอย่างได้ ใช้ Expo SDK และทดสอบบน Android/iOS",
+                "tags": [
+                    "React Native",
+                    "Expo",
+                    "Camera",
+                    "Image Picker",
+                    "Mobile App",
+                    "UI"
+                ],
+                "img": "https://img5.pic.in.th/file/secure-sv1/YOUTUBE-VDO-COVER-PAGE.png",
+                "link": "https://youtu.be/1dbrWPKALRw",
+                "keyword": [
+                    {
+                        "title": "ใช้งานกล้อง",
+                        "desc": "ถ่ายภาพภายในแอป"
+                    },
+                    {
+                        "title": "จัดการภาพ",
+                        "desc": "เลือกและดูตัวอย่างภาพได้"
+                    },
+                    {
+                        "title": "โปรเจกต์ฝึกทำ",
+                        "desc": "เรียนรู้ React Native และ Expo ผ่านการทดลอง"
+                    }
+                ]
+            },
+            {
+                "name": "CPE406 Weather Station",
+                "desc": "เว็บไซต์พยากรณ์อากาศ แสดงผลเรียลไทม์และพยากรณ์",
+                "desc-full": "สร้าง Weather Station ใช้ ESP8266 และ DHT11 วัดอุณหภูมิและความชื้น แสดงผลผ่านเว็บด้วย Node.js, Express, MongoDB รองรับ Responsive และใช้ OpenWeatherMap API เพิ่มความแม่นยำ",
+                "tags": [
+                    "Azure",
+                    "ESP8266",
+                    "DHT11",
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "API",
+                    "MongoDB",
+                    "Node.js",
+                    "Express",
+                    "Arduino IDE",
+                    "IoT",
+                    "Web Dashboard",
+                    "Sensor"
+                ],
+                "img": "https://static.wixstatic.com/media/eb3c37_e23e576dba4e46138298f288a8f65519~mv2.png",
+                "link": "https://github.com/northsnx/CPE406-IoT-TempAndHum",
+                "keyword": [
+                    {
+                        "title": "IoT Weather Station",
+                        "desc": "เก็บข้อมูลอุณหภูมิและความชื้นจากเซ็นเซอร์ ESP8266 และ DHT11"
+                    },
+                    {
+                        "title": "เว็บแดชบอร์ด",
+                        "desc": "แสดงผลแบบเรียลไทม์และพยากรณ์ พร้อม Responsive Design"
+                    },
+                    {
+                        "title": "API Integration",
+                        "desc": "ใช้ OpenWeatherMap API เพิ่มความแม่นยำในการพยากรณ์"
+                    }
+                ]
+            },
+            {
+                "name": "CPE243 Light Walking Robot with LDR",
+                "desc": "สร้างหุ่นยนต์เดินตามแสงด้วยเซ็นเซอร์ LDR",
+                "desc-full": "สร้างหุ่นยนต์เดินติดตั้งเซ็นเซอร์ LDR ตรวจจับและเดินตามแสง ใช้วงจร Logic และมอเตอร์ควบคุมการเคลื่อนไหว โครงการสอนเรื่อง Robotics, Electronics และ Sensor Navigation",
+                "tags": [
+                    "Robot",
+                    "Logic",
+                    "Electronics",
+                    "LDR Module",
+                    "Sensors",
+                    "Automation"
+                ],
+                "img": "https://i.ytimg.com/vi/rpPD_dvm6P0/maxresdefault.jpg",
+                "link": "https://youtu.be/rpPD_dvm6P0",
+                "keyword": [
+                    {
+                        "title": "ตามแสง",
+                        "desc": "หุ่นยนต์ใช้ LDR ตรวจจับและเดินตามแสง"
+                    },
+                    {
+                        "title": "รวมเซ็นเซอร์",
+                        "desc": "รวม Electronics Sensor กับการควบคุมมอเตอร์"
+                    },
+                    {
+                        "title": "เรียนรู้ Robotics",
+                        "desc": "เข้าใจพื้นฐาน Robotics และ Automation"
+                    }
+                ]
+            },
+            {
+                "name": "CPE345 Control RGB LED with Potentiometer",
+                "desc": "ควบคุมสี LED RGB ด้วย Potentiometer บน ESP32",
+                "desc-full": "สร้างระบบปรับสี RGB LED ด้วย ESP32 และ Potentiometer ปรับสีแดง เขียว น้ำเงิน ได้อิสระ ใช้ Blynk ควบคุมและติดตามผล แนะนำ IoT, Analog Input และ LED Realtime",
+                "tags": [
+                    "ESP32",
+                    "Potentiometer",
+                    "IoT",
+                    "Blynk",
+                    "RGB LED",
+                    "Electronics"
+                ],
+                "img": "https://i.ytimg.com/vi/byqDhYDtZZ0/maxresdefault.jpg",
+                "link": "https://youtu.be/byqDhYDtZZ0",
+                "keyword": [
+                    {
+                        "title": "ควบคุม RGB LED",
+                        "desc": "ปรับสี LED ด้วย Potentiometer"
+                    },
+                    {
+                        "title": "IoT Integration",
+                        "desc": "ควบคุมผ่าน ESP32 และ Blynk"
+                    },
+                    {
+                        "title": "Electronics Interactive",
+                        "desc": "เรียนรู้ Analog Input และ Manipulation"
+                    }
+                ]
+            },
+            {
+                "name": "CPE212 Voltmeter",
+                "desc": "โวลต์มิเตอร์ดิจิทัลวัดแรงดัน 0–24V ด้วย ESP8266",
+                "desc-full": "สร้างโวลต์มิเตอร์ดิจิทัล ใช้ ESP8266 และ Arduino วัดแรงดัน 0–24V แสดงผลบนเว็บแดชบอร์ด รองรับ Remote Monitoring โครงการสอน Electronics, IoT และ Visualization",
+                "tags": [
+                    "ESP8266",
+                    "IoT",
+                    "Arduino",
+                    "Arduino IDE",
+                    "Electronics",
+                    "Voltmeter",
+                    "Web Dashboard",
+                    "Visualization"
+                ],
+                "img": "https://i.ytimg.com/vi/kN53lsdMt50/maxresdefault.jpg",
+                "link": "https://youtu.be/kN53lsdMt50",
+                "keyword": [
+                    {
+                        "title": "Digital Voltmeter",
+                        "desc": "วัดแรงดันไฟฟ้า 0–24V อย่างแม่นยำ"
+                    },
+                    {
+                        "title": "Web Monitoring",
+                        "desc": "แสดงผลบนเว็บแดชบอร์ด"
+                    },
+                    {
+                        "title": "IoT Visualization",
+                        "desc": "รวม IoT เพื่อวัดและแสดงผลเรียลไทม์"
+                    }
+                ]
+            },
+            {
+                "name": "CPE121 Smart Plug",
+                "desc": "ปลั๊กอัจฉริยะควบคุมอุปกรณ์ไฟฟ้าระยะไกล",
+                "desc-full": "สร้างระบบ Smart Plug ด้วย ESP32 ควบคุมอุปกรณ์ไฟฟ้าผ่าน App บนมือถือ เชื่อม Blynk IoT Monitor การใช้พลังงานและตั้งเวลาอัตโนมัติ เพิ่มความปลอดภัยและประหยัดพลังงาน",
+                "tags": [
+                    "ESP32",
+                    "Wokwi",
+                    "Arduino",
+                    "Arduino IDE",
+                    "Blynk",
+                    "IoT",
+                    "Smart Plug",
+                    "Energy Monitoring",
+                    "Automation"
+                ],
+                "img": "https://img2.pic.in.th/pic/YOUTUBE-VDO-COVER-PAGE-1.png",
+                "link": "-",
+                "keyword": [
+                    {
+                        "title": "ควบคุมระยะไกล",
+                        "desc": "ควบคุมอุปกรณ์ผ่าน App บนมือถือ"
+                    },
+                    {
+                        "title": "ตรวจสอบพลังงาน",
+                        "desc": "ติดตามและปรับปรุงการใช้พลังงาน"
+                    },
+                    {
+                        "title": "IoT & Automation",
+                        "desc": "ตั้งเวลาอัตโนมัติและรวม Cloud Services"
+                    }
+                ]
+            }
+        ],
+        "certificate": [
+            {
+                "name": "Gemini Certified Educator",
+                "company": "Google",
+                "issued": "18 Sep 2025",
+                "expires": "17 Sep 2028",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_7a045460c3004f4ca921e5b7f6a1200d~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "Software Engineer Intern",
+                "company": "HackerRank",
+                "issued": "28 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_7c324a12774041efa5d2bbe536df8f10~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "Software Engineer",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_65a6f05cd2de4971bbab98dee80d1d9f~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "SQL (Basic)",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_c0ce1eeceb404b77b2720516b2de8b5a~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "React (Basic)",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_0c2dbeb721bc4e04b6120f6a2aeca9ed~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            },
+            {
+                "name": "C# (Basic)",
+                "company": "HackerRank",
+                "issued": "29 Aug 2025",
+                "expires": "-",
+                "cerID": "-",
+                "img": "https://static.wixstatic.com/media/eb3c37_ff6b054b7b8e40698e5b0cd1de6a04bb~mv2.png/v1/fill/w_750,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png"
+            }
+        ],
+        "contact": [
+            {
+                "name": "email",
+                "icon": "fa-solid fa-envelope",
+                "link": "mailto:thanaphat.sir@spumail.net",
+                "desc": "ติดต่อทางอีเมล\nthanaphat.sir@spumail.net",
+                "btn": "spumail.net"
+            },
+            {
+                "name": "linkedin",
+                "icon": "fa-brands fa-linkedin",
+                "link": "https://www.linkedin.com/in/northsiri/",
+                "desc": "เชื่อมต่อกับผมบน LinkedIn",
+                "btn": "@northsiri"
+            },
+            {
+                "name": "github",
+                "icon": "fa-brands fa-github",
+                "link": "https://github.com/northsnx",
+                "desc": "ดูโปรเจกต์ของผมบน GitHub",
+                "btn": "@northsnx"
+            },
+            {
+                "name": "Resume",
+                "icon": "fa-solid fa-file",
+                "link": "./assets/SuperResume-northsnx.pdf",
+                "desc": "ดาวน์โหลด Resume ล่าสุดของผม",
+                "btn": "Download PDF"
+            },
+            {
+                "name": "Old Portfolio",
+                "icon": "fa-regular fa-address-book",
+                "link": "https://northsnx.wixsite.com/northnaphat",
+                "desc": "ดู Portfolio เก่าของผม",
+                "btn": "northsnx.wixsite"
+            }
+        ]
+    }
+}
