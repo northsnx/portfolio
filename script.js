@@ -16,7 +16,7 @@ sections.forEach(section => observer.observe(section));
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 1000) {  // ถ้าเลื่อนเกิน 100px
+  if (window.scrollY > 1000) { 
     header.classList.add("sticky");
   } else {
     header.classList.remove("sticky");
@@ -24,24 +24,24 @@ window.addEventListener("scroll", () => {
 });
 
 
-
+// Particles / Sparks
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
-const particleCount = 60; // ลดจำนวน
+const particleCount = 60; 
 const maxLineDistance = 120;
 
 class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 2 + 1.5;
-    this.speedX = (Math.random() * 0.4) - 0.2; // ช้า
-    this.speedY = (Math.random() * 0.4) - 0.2;
-    this.color = 'rgba(255,255,255,0.6)'; // โปร่งใส
+    this.size = Math.random() * 2 + 1;
+    this.speedX = Math.random() * 1 - 0.5;
+    this.speedY = Math.random() * 1 - 0.5;
+    this.color = 'rgba(255, 255, 255, 0.8)';
   }
   update() {
     this.x += this.speedX;
@@ -51,8 +51,6 @@ class Particle {
   }
   draw() {
     ctx.fillStyle = this.color;
-    ctx.shadowBlur = 5;     // เพิ่ม glow นิดหน่อย
-    ctx.shadowColor = this.color;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
@@ -61,44 +59,18 @@ class Particle {
 
 function initParticles() {
   particlesArray = [];
-  for (let i = 0; i < particleCount; i++) {
+  for (let i = 0; i < 100; i++) {
     particlesArray.push(new Particle());
   }
 }
 initParticles();
 
-function connectParticles() {
-  for (let a = 0; a < particlesArray.length; a++) {
-    for (let b = a + 1; b < particlesArray.length; b++) {
-      const dx = particlesArray[a].x - particlesArray[b].x;
-      const dy = particlesArray[a].y - particlesArray[b].y;
-      const distance = Math.sqrt(dx*dx + dy*dy);
-      if (distance < maxLineDistance) {
-        ctx.strokeStyle = `rgba(255,255,255,${0.2*(1 - distance/maxLineDistance)})`;
-        ctx.lineWidth = 0.8;
-        ctx.beginPath();
-        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-        ctx.stroke();
-      }
-    }
-  }
-}
-
 function animateParticles() {
-  // พื้นหลัง gradient ดำสวย
-  const gradient = ctx.createLinearGradient(0,0,canvas.width,canvas.height);
-  gradient.addColorStop(0,'#000000');
-  gradient.addColorStop(1,'#0d0d0d');
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   particlesArray.forEach(p => {
     p.update();
     p.draw();
   });
-
-  connectParticles();
   requestAnimationFrame(animateParticles);
 }
 animateParticles();
@@ -109,18 +81,28 @@ window.addEventListener('resize', () => {
   initParticles();
 });
 
+// back to top BTN
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
+});
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' 
+  });
+});
 
-
-
-
-
-
-
+// JSON data
 document.addEventListener("DOMContentLoaded", () => {
-  let currentLang = localStorage.getItem("lang") || "en"; // โหลดค่าภาษาเดิมจาก localStorage
+  let currentLang = localStorage.getItem("lang") || "en"; // localStorage
   let dataJSON = {};
 
-  // โหลดข้อมูล JSON
+  // loading JSON
   fetch("data.json")
     .then(response => response.json())
     .then(data => {
@@ -128,7 +110,23 @@ document.addEventListener("DOMContentLoaded", () => {
       renderContent(); // แสดงเนื้อหาเริ่มต้น
     });
 
-  // ฟังก์ชันแสดงเนื้อหาตามภาษา
+  const languageSwitcher = document.querySelector('.language-switcher');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+      // scroll down → hidden
+      languageSwitcher.style.transform = 'translateY(-100px)';
+      languageSwitcher.style.opacity = '0';
+    } else {
+      // scroll up → show
+      languageSwitcher.style.transform = 'translateY(0)';
+      languageSwitcher.style.opacity = '1';
+    }
+    lastScrollY = window.scrollY;
+  });
+
+  // Translate EN-TH
   function renderContent() {
     if (!dataJSON[currentLang]) return;
 
