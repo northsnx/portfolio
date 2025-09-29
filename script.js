@@ -23,22 +23,25 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Particles / Sparks
+
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
+const particleCount = 60; // ลดจำนวน
+const maxLineDistance = 120;
 
 class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 2 + 1;
-    this.speedX = Math.random() * 1 - 0.5;
-    this.speedY = Math.random() * 1 - 0.5;
-    this.color = 'rgba(255, 255, 255, 0.8)';
+    this.size = Math.random() * 2 + 1.5;
+    this.speedX = (Math.random() * 0.4) - 0.2; // ช้า
+    this.speedY = (Math.random() * 0.4) - 0.2;
+    this.color = 'rgba(255,255,255,0.6)'; // โปร่งใส
   }
   update() {
     this.x += this.speedX;
@@ -48,6 +51,8 @@ class Particle {
   }
   draw() {
     ctx.fillStyle = this.color;
+    ctx.shadowBlur = 5;     // เพิ่ม glow นิดหน่อย
+    ctx.shadowColor = this.color;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
@@ -56,18 +61,44 @@ class Particle {
 
 function initParticles() {
   particlesArray = [];
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < particleCount; i++) {
     particlesArray.push(new Particle());
   }
 }
 initParticles();
 
+function connectParticles() {
+  for (let a = 0; a < particlesArray.length; a++) {
+    for (let b = a + 1; b < particlesArray.length; b++) {
+      const dx = particlesArray[a].x - particlesArray[b].x;
+      const dy = particlesArray[a].y - particlesArray[b].y;
+      const distance = Math.sqrt(dx*dx + dy*dy);
+      if (distance < maxLineDistance) {
+        ctx.strokeStyle = `rgba(255,255,255,${0.2*(1 - distance/maxLineDistance)})`;
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
 function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // พื้นหลัง gradient ดำสวย
+  const gradient = ctx.createLinearGradient(0,0,canvas.width,canvas.height);
+  gradient.addColorStop(0,'#000000');
+  gradient.addColorStop(1,'#0d0d0d');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
   particlesArray.forEach(p => {
     p.update();
     p.draw();
   });
+
+  connectParticles();
   requestAnimationFrame(animateParticles);
 }
 animateParticles();
@@ -77,6 +108,10 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
   initParticles();
 });
+
+
+
+
 
 
 

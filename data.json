@@ -486,6 +486,13 @@
                 "link": "https://northsnx.wixsite.com/northnaphat",
                 "desc": "Check out my previous portfolio",
                 "btn": "northsnx.wixsite"
+            },
+            {
+                "name": "Facebook",
+                "icon": "fa-brands fa-facebook",
+                "link": "https://www.facebook.com/thananorth",
+                "desc": "Connect with me on Facebook",
+                "btn": "@thananorth"
             }
         ]
     },
@@ -972,6 +979,13 @@
                 "link": "https://northsnx.wixsite.com/northnaphat",
                 "desc": "ดู Portfolio เก่าของผม",
                 "btn": "northsnx.wixsite"
+            },
+            {
+                "name": "Facebook",
+                "icon": "fa-brands fa-facebook",
+                "link": "https://www.facebook.com/thananorth",
+                "desc": "เชื่อมต่อกับผมบน Facebook",
+                "btn": "@thananorth"
             }
         ]
     }
