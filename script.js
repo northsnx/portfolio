@@ -79,35 +79,10 @@ window.addEventListener('resize', () => {
 });
 
 
-const emojiContainer = document.querySelector(".floating-emojis");
-const emojis = ["🚀", "💻", "☕", "🧺", "🎧", "🔥", "✨", "📱", "🎮", "🌙", "🐱", "🐶", "🍕", "🎉", "🌈"];
 
-function randomEmoji() {
-  return emojis[Math.floor(Math.random() * emojis.length)];
-}
-
-function spawnEmoji() {
-  const span = document.createElement("span");
-  span.textContent = randomEmoji();
-  span.style.left = Math.random() * 100 + "%";
-  span.style.fontSize = (1.5 + Math.random() * 2.5) + "rem";
-  span.style.animationDuration = (6 + Math.random() * 6) + "s";
-  emojiContainer.appendChild(span);
-
-  // เมื่อ animation จบ → ลบออก แล้วสร้างใหม่
-  span.addEventListener("animationend", () => {
-    span.remove();
-    spawnEmoji();
-  });
-}
-
-// เริ่มต้น spawn 15 ตัว
-for (let i = 0; i < 15; i++) {
-  spawnEmoji();
-}
 
 document.addEventListener("DOMContentLoaded", () => {
-  let currentLang = 'en'; // default language
+  let currentLang = localStorage.getItem("lang") || "en"; // โหลดค่าภาษาเดิมจาก localStorage
   let dataJSON = {};
 
   // โหลดข้อมูล JSON
@@ -118,7 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
       renderContent(); // แสดงเนื้อหาเริ่มต้น
     });
 
+  // ฟังก์ชันแสดงเนื้อหาตามภาษา
   function renderContent() {
+    if (!dataJSON[currentLang]) return;
+
     const data = dataJSON[currentLang];
 
     // Intro
@@ -307,10 +285,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // เปลี่ยนภาษา
-  document.getElementById("lang-select").addEventListener("change", (e) => {
-    currentLang = e.target.value;
-    renderContent();
+  // เปลี่ยนภาษาเมื่อกดปุ่ม
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentLang = btn.dataset.lang;          // อัปเดตภาษา
+      localStorage.setItem("lang", currentLang); // บันทึกใน localStorage
+      renderContent();                           // รีเรนเดอร์เนื้อหา
+
+      // เปลี่ยน active ของปุ่ม
+      document.querySelectorAll(".lang-btn").forEach(b => {
+        b.classList.toggle("active", b.dataset.lang === currentLang);
+      });
+    });
   });
+
+
 });
+
 

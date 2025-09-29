@@ -65,29 +65,22 @@ header {
   position: relative;
   text-align: center;
   padding: 5rem 10rem;
-  height: 350px;
   color: #fff;
-  background: var(--gradient-primary);
   background-size: 200% 200%;
   animation: gradientShift 12s ease infinite;
-  border-bottom: 4px solid var(--border-color);
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
 header h1 {
   font-size: 5rem;
   margin-top: 50px;
-  text-shadow: var(--header-text-shadow);
   animation: fadeInDown 1.5s ease forwards;
 }
 
 header h2 {
   font-size: 2rem;
   margin: 0;
-  text-shadow: var(--header-subtext-shadow);
   animation: fadeInUp 1.5s ease 0.5s forwards;
-  opacity: 0;
 }
 
 .underline {
@@ -742,66 +735,70 @@ footer {
 }
 
 
-/* =========================
-   language-switcher
-========================= */
-
+/* ========================
+   Language Switcher
+======================== */
 .language-switcher {
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 20px;
-  z-index: 2000;
+  display: flex;
+  gap: 12px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+
+.lang-btn {
+  border: none;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  padding: 6px 12px;
-  border-radius: 8px;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 0;
+}
+
+.lang-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.lang-btn:hover {
+  transform: scale(1.15);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.language-switcher i {
-  font-size: 2rem;
-  color: white;
+.lang-btn.active {
+  border: 2px solid #459bec;
+  box-shadow: 0 0 12px rgba(69,155,236,0.6);
+  transform: scale(1.2);
 }
 
-.language-switcher label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--primary-color);
-}
 
-#lang-select {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid var(--primary-color);
-  background: linear-gradient(135deg, #fff, #f5faff);
-  color: #333;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-#lang-select:hover {
-  background: var(--primary-color);
-  color: #fff;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-}
-
-#lang-select:focus {
-  outline: none;
-  border-color: #0066ff;
-  box-shadow: 0 0 0 3px rgba(0,102,255,0.2);
-}
 
 
 /* =======================
    Responsive
 ======================= */
 @media (max-width:1024px) {
+  header {
+    padding: 3rem 1.5rem;
+    height: auto;
+  }
 
   section,
   .projects-grid,
@@ -848,12 +845,12 @@ footer {
   }
 
   header {
-    padding: 3rem 2rem;
+    padding: 3rem 1.5rem;
     height: auto;
   }
 
   header h1 {
-    font-size: 1rem;
+    font-size: 2.2rem;
     margin-top: 20px;
   }
 
@@ -992,5 +989,23 @@ footer {
   .modal-content h2 {
     margin-bottom: 1rem;
   }
+
+  #lang-select {
+  padding: 3px 8px;
+  font-size: 16px;
+}
+
+  .language-switcher {
+    gap: 8px;
+    padding: 4px 8px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .lang-btn {
+    width: 30px;
+    height: 30px;
+  }
+
 
 }
