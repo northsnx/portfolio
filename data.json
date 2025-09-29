@@ -478,7 +478,7 @@
                 "icon": "fa-solid fa-file",
                 "link": "./assets/SuperResume-northsnx.pdf",
                 "desc": "Get my latest resume",
-                "btn": "Download PDF"
+                "btn": "Get PDF"
             },
             {
                 "name": "Old Portfolio",
@@ -964,7 +964,7 @@
                 "icon": "fa-solid fa-file",
                 "link": "./assets/SuperResume-northsnx.pdf",
                 "desc": "ดาวน์โหลด Resume ล่าสุดของผม",
-                "btn": "Download PDF"
+                "btn": "Get PDF"
             },
             {
                 "name": "Old Portfolio",
