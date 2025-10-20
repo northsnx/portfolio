@@ -114,6 +114,28 @@
         ],
         "projects": [
             {
+                "name": "KhonRakKiRa - SPU Academic",
+                "desc": "Designed and developed a website for Khon Rak Ki Ra Club (SPU Academic)",
+                "desc-full": "Designed and developed an official website for Khon Rak Ki Ra Club (SPU Academic) to showcase activities, events, and sports-related news for SPU students. Built with HTML, CSS, and JavaScript for responsive design and smooth user experience.",
+                "tags": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "img": "https://res.cloudinary.com/dwsdxpp4t/image/upload/v1760935968/Screenshot_from_2025-10-20_11-48-37_xxmdaw.png",
+                "link": "https://northsnx.github.io/rakkira.spu",
+                "keyword": [
+                    {
+                        "title": "Sports Club Website",
+                        "desc": "A central hub for SPU students to explore activities, news, and events from Khon Rak Ki Ra Club."
+                    },
+                    {
+                        "title": "Responsive & Interactive Design",
+                        "desc": "Built using HTML, CSS, and JavaScript with modern layouts and animations for better accessibility and engagement."
+                    }
+                ]
+            },
+            {
                 "name": "ExtendX Developer",
                 "desc": "Designed and developed an application to help users understand and interpret laundry care symbols on clothing labels.",
                 "desc-full": "Designed and developed an application to help users understand and interpret laundry care symbols on clothing labels. The app includes a visual guide, interactive examples, and a tutorial section. Implemented responsive design with HTML, CSS, and JavaScript to ensure accessibility on both desktop and mobile devices. Users can scan laundry labels with their phone camera and get instant care instructions. The project improves laundry handling efficiency and reduces clothing damage.",
@@ -606,6 +628,28 @@
             }
         ],
         "projects": [
+            {
+                "name": "เว็บไซต์ชมรมคนรักกีฬา SPU",
+                "desc": "ออกแบบและพัฒนาเว็บไซต์สำหรับชมรมคนรักกีฬาของมหาวิทยาลัยศรีปทุม",
+                "desc-full": "พัฒนาเว็บไซต์อย่างเป็นทางการของชมรมคนรักกีฬา เพื่อแสดงข่าวสาร กิจกรรม และผลงานของชมรม รวมถึงเป็นช่องทางประชาสัมพันธ์ให้กับนักศึกษามหาวิทยาลัยศรีปทุม โดยใช้เทคโนโลยี HTML, CSS และ JavaScript เพื่อให้เว็บไซต์ดูทันสมัยและตอบสนองทุกอุปกรณ์",
+                "tags": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "img": "https://res.cloudinary.com/dwsdxpp4t/image/upload/v1760935968/Screenshot_from_2025-10-20_11-48-37_xxmdaw.png",
+                "link": "https://northsnx.github.io/rakkira.spu",
+                "keyword": [
+                    {
+                        "title": "เว็บไซต์ชมรมกีฬา",
+                        "desc": "จัดทำขึ้นเพื่อเป็นศูนย์กลางข้อมูลข่าวสารและกิจกรรมของชมรมคนรักกีฬา มหาวิทยาลัยศรีปทุม"
+                    },
+                    {
+                        "title": "ดีไซน์ตอบสนองทุกอุปกรณ์",
+                        "desc": "ออกแบบด้วย HTML, CSS และ JavaScript ให้เว็บไซต์ใช้งานง่าย ดูสวยงาม และเหมาะกับทุกหน้าจอ"
+                    }
+                ]
+            },
             {
                 "name": "ExtendX Developer",
                 "desc": "ออกแบบและพัฒนาแอปพลิเคชันช่วยให้ผู้ใช้เข้าใจสัญลักษณ์การดูแลเสื้อผ้า",
