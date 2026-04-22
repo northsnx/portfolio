@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="th">
 
@@ -10,46 +12,43 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/png" href="./assets/IconSAKDEE.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
+    <div id="loading-screen">
+        <div class="loader-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <p>Loading Portfolio...</p>
+    </div>
+
     <!-- Particles background -->
-    <canvas id="particles"></canvas>
+    <!-- <canvas id="particles"></canvas> -->
 
     <!-- Language Switcher -->
     <div class="language-switcher">
         <button class="lang-btn" data-lang="en">
             <img src="https://flagcdn.com/gb.svg" alt="English">
         </button>
-        <button class="lang-btn" data-lang="th">
+        <!-- <button class="lang-btn" data-lang="th">
             <img src="https://flagcdn.com/th.svg" alt="ภาษาไทย">
-        </button>
+        </button> -->
     </div>
 
-    <header>
+    <!-- <header>
         <h1 id="intro-name"></h1>
         <h2 id="intro-title"></h2>
-    </header>
-
-    <nav>
-        <a href="#about"><i class="fa-regular fa-user"></i> About</a>
-        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-        <a href="#projects"><i class="fa-solid fa-list-check"></i> Projects</a>
-        <a href="#certificate"><i class="fas fa-certificate"></i> Certificate</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-
-    </nav>
-
-
+    </header> -->
 
     <!-- About -->
     <section id="about" class="scroll-section">
-        <h2>💁‍♂️About Me</h2>
+        <!-- <h2>💁‍♂️About Me</h2> -->
         <div id="hero" class="scroll-section">
             <div id="hero-container">
-                <img src="./assets/profile.jpeg" alt="NORTHSNX" class="profile-pic">
+                <img id="hero-image" src="" alt="NORTHSNX" class="profile-pic">
             </div>
             <div id="hero-container">
                 <p id="hero-name" style="color: var(--primary-color);"></p>
@@ -62,44 +61,64 @@
         </div>
     </section>
 
+    <nav>
+        <a href="#about"><i class="fa-regular fa-user"></i> About</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+        <a href="#projects"><i class="fa-solid fa-list-check"></i> Projects</a>
+        <a href="#certificate"><i class="fas fa-certificate"></i> Certificate</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
+
     <!-- Skills -->
     <section id="skills" class="scroll-section">
-        <h2>💡 Technical Skills</h2>
+        <h2>Technical Skills</h2>
         <div id="skills-list" class="skills-grid"></div>
+    </section>
+
+    <!-- Experience -->
+    <!-- <section id="experience" class="scroll-section">
+        <h2>Experience</h2>
+        <div id="experience-list" class="experience-grid"></div>
+    </section> -->
+    <section id="experience" class="scroll-section">
+        <h2>Experience</h2>
+        <div id="experience-list" class="timeline"></div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="scroll-section">
-        <h2>🚀 Projects in Academic</h2>
+        <h2>Projects</h2>
         <div id="projects-list" class="projects-grid" title="Click to Preview"></div>
     </section>
 
     <!-- certificate -->
     <section id="certificate" class="scroll-section">
-        <h2>🥇 Certificate</h2>
+        <h2>Certificate</h2>
         <div id="certificate-list" class="certificate-grid" title="Click to Preview"></div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="scroll-section">
-        <h2>✉️ Contact Me</h2>
+        <h2>Contact Me</h2>
         <div class="contact-card-container">
-            <h5 id="intro-quote2"></h5>
-            <h5 id="intro-quote" class="tagline"></h5>
+            <h3 id="intro-quote2"></h3>
+            <h3 id="intro-quote" class="tagline"></h3>
             <div id="contact-list" class="contact-grid" title="Click to Preview"></div>
         </div>
     </section>
 
 
-    <button id="back-to-top" title="กลับด้านบน">↑</button>
+    <button id="back-to-top" title="กลับด้านบน"><i class="fa-solid fa-arrow-up"></i></button>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 ExtendX | All Rights Reserved</p>
-
+        <p>&copy; 2024 northsnx | All Rights Reserved</p>
     </footer>
 
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+
 </body>
 
 
