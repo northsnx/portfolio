@@ -696,7 +696,7 @@ section h2::after {
 .timeline-item {
   position: relative;
   width: 50%;
-  padding: 2rem;
+  padding: 0rem 2rem;
   box-sizing: border-box;
 }
 
@@ -712,6 +712,16 @@ section h2::after {
   left: 50%;
   display: flex;
   justify-content: flex-start;
+}
+
+/* ฝั่งซ้าย → ดัน logo ไปขวาสุด */
+.timeline-item.left .logo-box {
+  margin-left: auto;
+}
+
+/* ฝั่งขวา → ดัน logo ไปซ้ายสุด */
+.timeline-item.right .logo-box {
+  margin-right: auto;
 }
 
 .timeline-item::after {
@@ -736,8 +746,8 @@ section h2::after {
 
 .timeline-content {
   display: flex;
-  
-  gap: 0.5rem;
+  justify-content: space-between; /* เพิ่มบรรทัดนี้ */
+  gap: 1rem;
 
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -745,7 +755,7 @@ section h2::after {
   border-radius: var(--border-radius);
 
   width: 100%;
-  max-width: 420px;
+  max-width: 600px;
 
   backdrop-filter: blur(10px);
   transition: 0.3s;
@@ -755,6 +765,7 @@ section h2::after {
   transform: translateY(-6px);
   border-color: var(--primary-color);
 }
+
 
 .logo-box {
   width: 100px;
@@ -777,9 +788,13 @@ section h2::after {
   object-fit: contain;
 }
 
+.text-box {
+  flex: 1;
+}
+
 .text-box h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--text-color);
 }
 
@@ -800,6 +815,7 @@ section h2::after {
   color: var(--text-color-muted);
   line-height: 1.5;
 }
+
 
 
 /* =======================

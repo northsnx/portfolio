@@ -76,10 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   async function loadSubcollections(baseData) {
-    const [skillsSnap, experienceSnap, projectsSnap, certSnap, contactSnap] = await Promise.all([
+    const [skillsSnap, educationSnap, experienceSnap, projectsSnap, certSnap, contactSnap] = await Promise.all([
       getDocs(query(
         collection(db, "portfolio", currentLang, "skills"),
         orderBy("id", "asc")
+      )),
+
+      getDocs(query(
+        collection(db, "portfolio", currentLang, "education"),
+        orderBy("id", "desc")
       )),
 
       getDocs(query(
@@ -103,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = {
       ...baseData,
       skill: skillsSnap.docs.map(doc => doc.data()),
+      education: educationSnap.docs.map(doc => doc.data()),
       experience: experienceSnap.docs.map(doc => doc.data()),
       projects: projectsSnap.docs.map(doc => doc.data()),
       certificate: certSnap.docs.map(doc => doc.data()),
@@ -122,8 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("intro-quote").innerText = data.quote || "";
     document.getElementById("intro-quote2").innerText = data.quote2 || "";
-    document.getElementById("hero-image").src = data.
-      image;
+    document.getElementById("hero-image").src = data.image;
     document.getElementById("hero-name").innerText = data.hero.name;
     document.getElementById("hero-edu").innerText = data.hero.edu;
     document.getElementById("about-text").innerText = data.hero.about || "";
@@ -139,9 +144,52 @@ document.addEventListener("DOMContentLoaded", () => {
       skillsContainer.appendChild(div);
     });
 
+    // Education
+    const Educontainer = document.getElementById("education-list");
+    Educontainer.innerHTML = "";
+
+    data.education
+    .filter(edu => edu.isEnabled === true)
+    .forEach((edu, index) => {
+      const side = index % 2 === 0 ? "left" : "right";
+
+      const card = document.createElement("div");
+      card.className = `timeline-item ${side}`;
+
+      card.innerHTML = `
+        <div class="timeline-content ${side}">
+
+          ${side === "left" ? `
+            <div class="text-box">
+              <h3>${edu.name}</h3>
+              <p class="job">${edu.level}</p>
+              <p class="desc" style="padding: 0; margin: 0;">${edu.desc}</p>
+              <span>${edu.duration}</span>              
+            </div>
+            <div class="logo-box" >
+              <img src="${edu.img}" />
+            </div>
+          ` : `
+            <div class="logo-box" >
+              <img src="${edu.img}" />
+            </div>
+            <div class="text-box">
+              <h3>${edu.name}</h3>
+              <p class="job">${edu.level}</p>
+              <p class="desc" style="padding: 0; margin: 0;">${edu.desc}</p>
+              <span>${edu.duration}</span>
+            </div>
+          `}
+        </div>
+      `;
+
+      Educontainer.appendChild(card);
+    });
+
+
     // Experience
-    const container = document.getElementById("experience-list");
-    container.innerHTML = "";
+    const Expcontainer = document.getElementById("experience-list");
+    Expcontainer.innerHTML = "";
 
     data.experience.forEach((exp, index) => {
       const side = index % 2 === 0 ? "left" : "right";
@@ -176,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      container.appendChild(card);
+      Expcontainer.appendChild(card);
     });
 
     // Projects
@@ -219,14 +267,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target === projectModal) projectModal.classList.remove("show");
     });
 
-    data.projects.forEach(project => {
-      const card = document.createElement("div");
-      card.className = "project-card";
-      let tagsHTML = project.tags.length > 3
-        ? project.tags.slice(0, 3).map(t => `<span class="tags">${t}</span>`).join('') +
-        `<span class="tags more">+${project.tags.length - 3} more</span>`
-        : project.tags.map(t => `<span class="tags">${t}</span>`).join('');
-      card.innerHTML = `
+    data.projects
+      .filter(project => project.isEnabled === true)
+      .forEach(project => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+        let tagsHTML = project.tags.length > 3
+          ? project.tags.slice(0, 3).map(t => `<span class="tags">${t}</span>`).join('') +
+          `<span class="tags more">+${project.tags.length - 3} more</span>`
+          : project.tags.map(t => `<span class="tags">${t}</span>`).join('');
+        card.innerHTML = `
         <img src="${project.img}" alt="${project.name}"/>
         <div class="project-card-container">
           <h3>${project.name}</h3>
@@ -235,20 +285,20 @@ document.addEventListener("DOMContentLoaded", () => {
             ${tagsHTML}
           </div>
         </div>`;
-      card.addEventListener("click", () => {
-        projectModalImg.src = project.img;
-        projectModalTitle.textContent = project.name;
-        projectModalTags.innerHTML = project.tags.map(t => `<span class="modal-tags">${t}</span>`).join('');
-        projectModalDesc.textContent = project["desc-full"] || project.desc || "";
-        projectModalLink.textContent = project.link;
-        projectModalLink.href = project.link;
-        projectModalKeyword.innerHTML = Array.isArray(project.keyword)
-          ? project.keyword.map(k => `<div class="modal-key-container"><h4>${k.title}</h4><p>${k.desc}</p></div>`).join('')
-          : "";
-        projectModal.classList.add("show");
+        card.addEventListener("click", () => {
+          projectModalImg.src = project.img;  
+          projectModalTitle.textContent = project.name;
+          projectModalTags.innerHTML = project.tags.map(t => `<span class="modal-tags">${t}</span>`).join('');
+          projectModalDesc.textContent = project["desc-full"] || project.desc || "";
+          projectModalLink.textContent = project.link;
+          projectModalLink.href = project.link;
+          projectModalKeyword.innerHTML = Array.isArray(project.keyword)
+            ? project.keyword.map(k => `<div class="modal-key-container"><h4>${k.title}</h4><p>${k.desc}</p></div>`).join('')
+            : "";
+          projectModal.classList.add("show");
+        });
+        projectsContainer.appendChild(card);
       });
-      projectsContainer.appendChild(card);
-    });
 
     // Certificate
     const certificateContainer = document.getElementById("certificate-list");
