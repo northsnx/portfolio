@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NORTH's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/png" href="./assets/IconSAKDEE.png">
@@ -16,98 +18,110 @@
 
 <body>
     <div id="loading-screen">
-        <div class="loader-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-        <p>Loading Portfolio...</p>
+        <span class="loader-mark">NORTH</span>
+        <div class="loader-bar"><span></span></div>
+        <p>Loading portfolio</p>
     </div>
-
-    <!-- Particles background -->
-    <!-- <canvas id="particles"></canvas> -->
 
     <!-- Language Switcher -->
     <div class="language-switcher">
         <button class="lang-btn" data-lang="en">
             <img src="https://flagcdn.com/gb.svg" alt="English">
         </button>
-        <!-- <button class="lang-btn" data-lang="th">
-            <img src="https://flagcdn.com/th.svg" alt="ภาษาไทย">
-        </button> -->
     </div>
 
-    <!-- <header>
-        <h1 id="intro-name"></h1>
-        <h2 id="intro-title"></h2>
-    </header> -->
-
-    <!-- About -->
-    <section id="about" class="scroll-section">
-        <!-- <h2>💁‍♂️About Me</h2> -->
-        <div id="hero" class="scroll-section">
-            <div id="hero-container">
-                <img id="hero-image" src="" alt="NORTHSNX" class="profile-pic">
+    <!-- Nav -->
+    <nav id="site-nav">
+        <div class="nav-inner">
+            <a href="#about" class="nav-brand">north<span>.</span></a>
+            <div class="nav-links">
+                <a href="#about"><i class="fa-regular fa-user"></i><span>About</span></a>
+                <a href="#skills"><i class="fa-solid fa-code"></i><span>Skills</span></a>
+                <a href="#experience"><i class="fa-solid fa-briefcase"></i><span>Experience</span></a>
+                <a href="#education"><i class="fa-solid fa-graduation-cap"></i><span>Education</span></a>
+                <a href="#projects"><i class="fa-solid fa-list-check"></i><span>Projects</span></a>
+                <a href="#certificate"><i class="fa-solid fa-certificate"></i><span>Certificates</span></a>
+                <a href="#contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
             </div>
-            <div id="hero-container">
-                <p id="hero-name" style="color: var(--primary-color);"></p>
-                <p id="hero-edu" style="color: var(--primary-color);"></p>
-                <br>
-                <p id="about-text"></p>
-                <br>
-                <p id="about-text2"></p>
+        </div>
+    </nav>
+
+    <!-- About / Hero -->
+    <section id="about" class="section hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <p class="eyebrow">Portfolio</p>
+                <h1 id="hero-name"></h1>
+                <p id="hero-edu" class="hero-edu"></p>
+                <p id="about-text" class="hero-about"></p>
+                <p id="about-text2" class="hero-about"></p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <div class="hero-media-frame">
+                    <img id="hero-image" src="" alt="NORTHSNX">
+                </div>
             </div>
         </div>
     </section>
 
-    <nav>
-        <a href="#about"><i class="fa-regular fa-user"></i> About</a>
-        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-        <a href="#projects"><i class="fa-solid fa-list-check"></i> Projects</a>
-        <a href="#certificate"><i class="fas fa-certificate"></i> Certificate</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-    </nav>
-
-
     <!-- Skills -->
-    <section id="skills" class="scroll-section">
-        <h2>Technical Skills</h2>
-        <div id="skills-list" class="skills-grid"></div>
+    <section id="skills" class="section">
+        <div class="container">
+            <p class="section-label">01 — Toolkit</p>
+            <h2>Technical Skills</h2>
+            <div id="skills-list" class="skills-grid"></div>
+        </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="scroll-section">
-        <h2>Experience</h2>
-        <div id="experience-list" class="timeline"></div>
+    <section id="experience" class="section">
+        <div class="container">
+            <p class="section-label">02 — Career</p>
+            <h2>Experience</h2>
+            <div id="experience-list" class="timeline"></div>
+        </div>
     </section>
 
     <!-- Education -->
-    <section id="education" class="scroll-section">
-        <h2>Education</h2>
-        <div id="education-list" class="timeline"></div>
+    <section id="education" class="section">
+        <div class="container">
+            <p class="section-label">03 — Academics</p>
+            <h2>Education</h2>
+            <div id="education-list" class="timeline"></div>
+        </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="scroll-section">
-        <h2>Projects</h2>
-        <div id="projects-list" class="projects-grid" title="Click to Preview"></div>
+    <section id="projects" class="section">
+        <div class="container">
+            <p class="section-label">04 — Selected Work</p>
+            <h2>Projects</h2>
+            <div id="projects-list" class="projects-grid" title="Click to Preview"></div>
+        </div>
     </section>
 
     <!-- certificate -->
-    <section id="certificate" class="scroll-section">
-        <h2>Certificate</h2>
-        <div id="certificate-list" class="certificate-grid" title="Click to Preview"></div>
+    <section id="certificate" class="section">
+        <div class="container">
+            <p class="section-label">05 — Credentials</p>
+            <h2>Certificates</h2>
+            <div id="certificate-list" class="certificate-grid" title="Click to Preview"></div>
+        </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="scroll-section">
-        <h2>Contact Me</h2>
-        <div class="contact-card-container">
-            <h3 id="intro-quote2"></h3>
-            <h3 id="intro-quote" class="tagline"></h3>
-            <div id="contact-list" class="contact-grid" title="Click to Preview"></div>
+    <section id="contact" class="section">
+        <div class="container">
+            <p class="section-label">06 — Contact</p>
+            <div class="contact-card-container">
+                <h2 id="intro-quote2" class="contact-heading"></h2>
+                <p id="intro-quote" class="tagline"></p>
+                <div id="contact-list" class="contact-grid" title="Click to Preview"></div>
+            </div>
         </div>
     </section>
 
@@ -122,8 +136,5 @@
     <script type="module" src="script.js"></script>
 
 </body>
-
-
-
 
 </html>

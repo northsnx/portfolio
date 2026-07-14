@@ -23,19 +23,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // ─── Scroll animation ────────────────────────────────────────
-const sections = document.querySelectorAll('.scroll-section');
+const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('active');
   });
 }, { threshold: 0.2 });
 sections.forEach(section => observer.observe(section));
-
-// ─── Sticky header ───────────────────────────────────────────
-const header = document.querySelector("header");
-window.addEventListener("scroll", () => {
-  header?.classList.toggle("sticky", window.scrollY > 1000);
-});
 
 // ─── Back to top button ──────────────────────────────────────
 const backToTopBtn = document.getElementById('back-to-top');
@@ -150,40 +144,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     data.education
     .filter(edu => edu.isEnabled === true)
-    .forEach((edu, index) => {
-      const side = index % 2 === 0 ? "left" : "right";
+    .forEach(edu => {
+      const item = document.createElement("div");
+      item.className = "timeline-item";
 
-      const card = document.createElement("div");
-      card.className = `timeline-item ${side}`;
-
-      card.innerHTML = `
-        <div class="timeline-content ${side}">
-
-          ${side === "left" ? `
-            <div class="text-box">
-              <h3>${edu.name}</h3>
-              <p class="job">${edu.level}</p>
-              <p class="desc" style="padding: 0; margin: 0;">${edu.desc}</p>
-              <span>${edu.duration}</span>              
-            </div>
-            <div class="logo-box" >
-              <img src="${edu.img}" />
-            </div>
-          ` : `
-            <div class="logo-box" >
-              <img src="${edu.img}" />
-            </div>
-            <div class="text-box">
-              <h3>${edu.name}</h3>
-              <p class="job">${edu.level}</p>
-              <p class="desc" style="padding: 0; margin: 0;">${edu.desc}</p>
-              <span>${edu.duration}</span>
-            </div>
-          `}
+      item.innerHTML = `
+        <span class="timeline-date">${edu.duration}</span>
+        <div class="timeline-card">
+          <div class="timeline-logo">
+            <img src="${edu.img}" />
+          </div>
+          <div class="timeline-text">
+            <h3>${edu.name}</h3>
+            <p class="job">${edu.level}</p>
+            <p class="desc">${edu.desc}</p>
+          </div>
         </div>
       `;
 
-      Educontainer.appendChild(card);
+      Educontainer.appendChild(item);
     });
 
 
@@ -191,40 +170,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const Expcontainer = document.getElementById("experience-list");
     Expcontainer.innerHTML = "";
 
-    data.experience.forEach((exp, index) => {
-      const side = index % 2 === 0 ? "left" : "right";
+    data.experience.forEach(exp => {
+      const item = document.createElement("div");
+      item.className = "timeline-item";
 
-      const card = document.createElement("div");
-      card.className = `timeline-item ${side}`;
-
-      card.innerHTML = `
-        <div class="timeline-content ${side}">
-
-          ${side === "left" ? `
-            <div class="text-box">
-              <h3>${exp.name}</h3>
-              <p class="job">${exp.job}</p>
-              <span>${exp.duration}</span>              
-              <p class="desc">${exp.desc}</p>
-            </div>
-            <div class="logo-box">
-              <img src="${exp.img}" />
-            </div>
-          ` : `
-            <div class="logo-box">
-              <img src="${exp.img}" />
-            </div>
-            <div class="text-box">
-              <h3>${exp.name}</h3>
-              <p class="job">${exp.job}</p>
-              <span>${exp.duration}</span>
-              <p class="desc">${exp.desc}</p>
-            </div>
-          `}
+      item.innerHTML = `
+        <span class="timeline-date">${exp.duration}</span>
+        <div class="timeline-card">
+          <div class="timeline-logo">
+            <img src="${exp.img}" />
+          </div>
+          <div class="timeline-text">
+            <h3>${exp.name}</h3>
+            <p class="job">${exp.job}</p>
+            <p class="desc">${exp.desc}</p>
+          </div>
         </div>
       `;
 
-      Expcontainer.appendChild(card);
+      Expcontainer.appendChild(item);
     });
 
     // Projects
