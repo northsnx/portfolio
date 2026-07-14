@@ -65,14 +65,6 @@ img {
 ======================= */
 .section {
   padding: 7rem 0;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.section.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .section-label {
@@ -184,7 +176,7 @@ img {
   font-weight: 600;
   text-decoration: none;
   border: 1px solid transparent;
-  transition: all var(--transition-time);
+  transition: background var(--transition-time), border-color var(--transition-time), color var(--transition-time);
 }
 
 .btn-primary {
@@ -304,7 +296,7 @@ img {
   border: 1px solid var(--border-color);
   padding: 0.9rem 1rem;
   border-radius: var(--border-radius-sm);
-  transition: var(--transition-time);
+  transition: background var(--transition-time), border-color var(--transition-time), transform var(--transition-time);
   color: var(--text-color);
   font-size: 0.9rem;
   font-weight: 500;
@@ -339,6 +331,18 @@ img {
   bottom: 8px;
   width: 1px;
   background: var(--border-color);
+}
+
+.timeline-progress {
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--accent-hover);
+  transform: scaleY(0);
+  transform-origin: top;
+  pointer-events: none;
 }
 
 .timeline-item {
@@ -385,7 +389,7 @@ img {
   background: var(--bg-elevated);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  transition: var(--transition-time);
+  transition: border-color var(--transition-time), transform var(--transition-time);
 }
 
 .timeline-card:hover {
@@ -447,7 +451,7 @@ img {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
-  transition: var(--transition-time);
+  transition: border-color var(--transition-time), transform var(--transition-time);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -558,7 +562,7 @@ img {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 1.5rem;
-  transition: var(--transition-time);
+  transition: border-color var(--transition-time), transform var(--transition-time);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -597,7 +601,7 @@ img {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  transition: var(--transition-time);
+  transition: background var(--transition-time), border-color var(--transition-time);
   font-size: 0.82rem;
   width: fit-content;
 }
@@ -664,7 +668,7 @@ img {
   line-height: 1;
   cursor: pointer;
   color: var(--text-secondary);
-  transition: var(--transition-time);
+  transition: color var(--transition-time), border-color var(--transition-time);
   background: var(--bg-color);
   border: 1px solid var(--border-color);
   width: 34px;

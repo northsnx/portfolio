@@ -22,15 +22,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ─── Scroll animation ────────────────────────────────────────
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('active');
-  });
-}, { threshold: 0.2 });
-sections.forEach(section => observer.observe(section));
-
 // ─── Back to top button ──────────────────────────────────────
 const backToTopBtn = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
@@ -140,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Education
     const Educontainer = document.getElementById("education-list");
-    Educontainer.innerHTML = "";
+    Educontainer.innerHTML = '<div class="timeline-progress"></div>';
 
     data.education
     .filter(edu => edu.isEnabled === true)
@@ -168,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Experience
     const Expcontainer = document.getElementById("experience-list");
-    Expcontainer.innerHTML = "";
+    Expcontainer.innerHTML = '<div class="timeline-progress"></div>';
 
     data.experience.forEach(exp => {
       const item = document.createElement("div");
@@ -338,7 +329,86 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>`;
       contactContainer.appendChild(card);
     });
+
+    setupScrollAnimations();
   } // end renderContent
+
+  // ── GSAP ScrollTrigger animations ──────────────────────────
+  let scrollCtx = null;
+
+  function setupScrollAnimations() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Re-render replaces the DOM (language switch / live Firestore updates),
+    // so tear down the previous batch of triggers before rebuilding them.
+    if (scrollCtx) scrollCtx.revert();
+
+    scrollCtx = gsap.context(() => {
+      // Hero: chained intro sequence, plays once on load (not scroll-bound)
+      gsap.timeline({ defaults: { ease: "power3.out", duration: 0.7 } })
+        .from(".eyebrow", { opacity: 0, y: 16 })
+        .from("#hero-name", { opacity: 0, y: 24 }, "-=0.45")
+        .from(".hero-edu", { opacity: 0, y: 16 }, "-=0.45")
+        .from(".hero-about", { opacity: 0, y: 16, stagger: 0.12 }, "-=0.35")
+        .from(".hero-cta .btn", { opacity: 0, y: 12, stagger: 0.1 }, "-=0.3")
+        .from(".hero-media-frame", { opacity: 0, scale: 0.94 }, "-=0.6");
+
+      // Subtle parallax drift on the hero portrait
+      gsap.to(".hero-media-frame", {
+        y: 30,
+        ease: "none",
+        scrollTrigger: { trigger: ".hero-section", start: "top top", end: "bottom top", scrub: true }
+      });
+
+      // Every other section fades/slides in as it enters the viewport
+      gsap.utils.toArray(".section:not(.hero-section)").forEach(section => {
+        gsap.from(section, {
+          opacity: 0,
+          y: 32,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: { trigger: section, start: "top 82%" }
+        });
+      });
+
+      // Cards / list items play in one after another (staggered) per section
+      const staggerIn = (containerSelector, itemSelector) => {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+        const items = container.querySelectorAll(itemSelector);
+        if (!items.length) return;
+        gsap.from(items, {
+          opacity: 0,
+          y: 24,
+          duration: 0.55,
+          ease: "power2.out",
+          stagger: 0.08,
+          scrollTrigger: { trigger: container, start: "top 85%" }
+        });
+      };
+
+      staggerIn(".skills-grid", ".skill");
+      staggerIn("#experience-list", ".timeline-item");
+      staggerIn("#education-list", ".timeline-item");
+      staggerIn(".projects-grid", ".project-card");
+      staggerIn(".certificate-grid", ".certificate-card");
+      staggerIn(".contact-grid", ".contact-card");
+
+      // Timeline "progress line" draws itself in sync with scroll
+      document.querySelectorAll(".timeline").forEach(tl => {
+        const line = tl.querySelector(".timeline-progress");
+        if (!line) return;
+        gsap.to(line, {
+          scaleY: 1,
+          ease: "none",
+          scrollTrigger: { trigger: tl, start: "top 75%", end: "bottom 65%", scrub: 0.6 }
+        });
+      });
+    });
+
+    ScrollTrigger.refresh();
+  }
 
   // Language switcher
   document.querySelectorAll(".lang-btn").forEach(btn => {
