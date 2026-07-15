@@ -19,6 +19,14 @@ const firebaseConfig = {
 };
 // ────────────────────────────────────────────────────────────
 
+// ─── Always start at top on reload (prevents ScrollTrigger/card misalignment
+// when the browser tries to restore a mid-page scroll position) ───────────
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
