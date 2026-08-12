@@ -52,6 +52,54 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentLang = localStorage.getItem("lang") || "en";
   let dataJSON = {};
 
+  // ── Modal open/close with background scroll lock ──────────
+  function openModal(modal) {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = scrollbarWidth > 0 ? `${scrollbarWidth}px` : "";
+    modal.classList.add("show");
+  }
+
+  function closeModal(modal) {
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
+  }
+
+  // ── Image lightbox (zoom) ──────────────────────────────────
+  const lightbox = document.createElement("div");
+  lightbox.id = "image-lightbox";
+  lightbox.className = "img-lightbox";
+  lightbox.innerHTML = `
+    <span id="lightbox-close" class="modal-close" title="Close">&times;</span>
+    <img id="lightbox-img" src="" alt=""/>
+  `;
+  document.body.appendChild(lightbox);
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add("show");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("show");
+  }
+
+  document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    if (lightbox.classList.contains("show")) {
+      closeLightbox();
+      return;
+    }
+    document.querySelectorAll(".modal.show").forEach(m => closeModal(m));
+  });
+
   // ── Language switcher hide/show on scroll ─────────────────
   const languageSwitcher = document.querySelector('.language-switcher');
   let lastScrollY = window.scrollY;
@@ -237,34 +285,43 @@ document.addEventListener("DOMContentLoaded", () => {
       m.innerHTML = `
         <div class="modal-content">
           <span id="project-modal-close" class="modal-close" title="Close">&times;</span>
-          <img id="project-modal-img" src="" alt="" class="modal-img"/>
-          <h1 id="project-modal-title"></h1>
-          <h2>// About Project</h2>
-          <p id="project-modal-desc"></p>
-          <h2>// Technology In Project</h2>
-          <div id="project-modal-tags" class="modal-tags-container"></div>
-          <h2>// Keyword</h2>
-          <div id="project-modal-keyword" class="modal-key-grid"></div>
-          <h2>// Reference</h2>
-          <p>- Link Preview: <a id="project-modal-link" title="Click to Preview" target="_blank"></a></p>
+          <div class="modal-media">
+            <div id="project-modal-bg" class="modal-media-bg"></div>
+            <img id="project-modal-img" src="" alt="" class="modal-img"/>
+            <span class="modal-zoom-hint"><i class="fas fa-expand"></i></span>
+          </div>
+          <div class="modal-body">
+            <h1 id="project-modal-title"></h1>
+            <h2>// About Project</h2>
+            <div id="project-modal-desc"></div>
+            <h2>// Technology In Project</h2>
+            <div id="project-modal-tags" class="modal-tags-container"></div>
+            <h2>// Keyword</h2>
+            <div id="project-modal-keyword" class="modal-key-grid"></div>
+            <a id="project-modal-link" class="modal-link-btn" title="Click to Preview" target="_blank">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
         </div>`;
       document.body.appendChild(m);
     }
 
     const projectModal = document.getElementById("project-modal");
     const projectModalImg = document.getElementById("project-modal-img");
+    const projectModalBg = document.getElementById("project-modal-bg");
     const projectModalTitle = document.getElementById("project-modal-title");
     const projectModalTags = document.getElementById("project-modal-tags");
     const projectModalDesc = document.getElementById("project-modal-desc");
     const projectModalLink = document.getElementById("project-modal-link");
     const projectModalKeyword = document.getElementById("project-modal-keyword");
+    projectModal.querySelector(".modal-media").onclick = () => openLightbox(projectModalImg.src);
 
     const oldClose = document.getElementById("project-modal-close");
     const newClose = oldClose.cloneNode(true);
     oldClose.replaceWith(newClose);
-    newClose.addEventListener("click", () => projectModal.classList.remove("show"));
+    newClose.addEventListener("click", () => closeModal(projectModal));
     window.addEventListener("click", e => {
-      if (e.target === projectModal) projectModal.classList.remove("show");
+      if (e.target === projectModal) closeModal(projectModal);
     });
 
     data.projects
@@ -280,22 +337,22 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${project.img}" alt="${project.name}"/>
         <div class="project-card-container">
           <h3>${project.name}</h3>
-          <p>${project.desc}</p>
+          <div class="clamp-3">${project["desc-full"] || project.desc}</div>
           <div class="tags-container" style="padding-top:10px;">
             ${tagsHTML}
           </div>
         </div>`;
         card.addEventListener("click", () => {
-          projectModalImg.src = project.img;  
+          projectModalImg.src = project.img;
+          projectModalBg.style.backgroundImage = `url(${project.img})`;
           projectModalTitle.textContent = project.name;
           projectModalTags.innerHTML = project.tags.map(t => `<span class="modal-tags">${t}</span>`).join('');
-          projectModalDesc.textContent = project["desc-full"] || project.desc || "";
-          projectModalLink.textContent = project.link;
+          projectModalDesc.innerHTML = project["desc-full"] || project.desc || "";
           projectModalLink.href = project.link;
           projectModalKeyword.innerHTML = Array.isArray(project.keyword)
             ? project.keyword.map(k => `<div class="modal-key-container"><h4>${k.title}</h4><p>${k.desc}</p></div>`).join('')
             : "";
-          projectModal.classList.add("show");
+          openModal(projectModal);
         });
         projectsContainer.appendChild(card);
       });
@@ -310,30 +367,52 @@ document.addEventListener("DOMContentLoaded", () => {
       m.innerHTML = `
         <div class="modal-content">
           <span id="certificate-modal-close" class="modal-close" title="Close">&times;</span>
-          <img id="certificate-modal-img" src="" alt="" class="modal-cer-img"/>
-          <h1 id="certificate-modal-name"></h1>
-          <p id="certificate-modal-company"></p>
-          <p id="certificate-modal-id"></p>
-          <p id="certificate-modal-issued"></p>
-          <p id="certificate-modal-expires"></p>
+          <div class="modal-media">
+            <div id="certificate-modal-bg" class="modal-media-bg"></div>
+            <img id="certificate-modal-img" src="" alt="" class="modal-cer-img"/>
+            <span class="modal-zoom-hint"><i class="fas fa-expand"></i></span>
+          </div>
+          <div class="modal-body">
+            <h1 id="certificate-modal-name"></h1>
+            <div class="modal-info-grid">
+              <div class="modal-info-item">
+                <span class="modal-info-label">Organization</span>
+                <p id="certificate-modal-company"></p>
+              </div>
+              <div class="modal-info-item">
+                <span class="modal-info-label">Certificate ID</span>
+                <p id="certificate-modal-id"></p>
+              </div>
+              <div class="modal-info-item">
+                <span class="modal-info-label">Issued On</span>
+                <p id="certificate-modal-issued"></p>
+              </div>
+              <div class="modal-info-item">
+                <span class="modal-info-label">Expires On</span>
+                <p id="certificate-modal-expires"></p>
+              </div>
+            </div>
+          </div>
         </div>`;
       document.body.appendChild(m);
     }
 
     const certificateModal = document.getElementById("certificate-modal");
     const certificateModalImg = document.getElementById("certificate-modal-img");
+    const certificateModalBg = document.getElementById("certificate-modal-bg");
     const certificateModalName = document.getElementById("certificate-modal-name");
     const certificateModalCompany = document.getElementById("certificate-modal-company");
     const certificateModalIssued = document.getElementById("certificate-modal-issued");
     const certificateModalExpires = document.getElementById("certificate-modal-expires");
     const certificateModalID = document.getElementById("certificate-modal-id");
+    certificateModal.querySelector(".modal-media").onclick = () => openLightbox(certificateModalImg.src);
 
     const oldCertClose = document.getElementById("certificate-modal-close");
     const newCertClose = oldCertClose.cloneNode(true);
     oldCertClose.replaceWith(newCertClose);
-    newCertClose.addEventListener("click", () => certificateModal.classList.remove("show"));
+    newCertClose.addEventListener("click", () => closeModal(certificateModal));
     window.addEventListener("click", e => {
-      if (e.target === certificateModal) certificateModal.classList.remove("show");
+      if (e.target === certificateModal) closeModal(certificateModal);
     });
 
     data.certificate.forEach(cert => {
@@ -349,12 +428,13 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
       card.addEventListener("click", () => {
         certificateModalImg.src = cert.img;
+        certificateModalBg.style.backgroundImage = `url(${cert.img})`;
         certificateModalName.textContent = cert.name;
-        certificateModalCompany.textContent = "Company / Organization: " + cert.company;
-        certificateModalIssued.textContent = "Issued on: " + cert.issued;
-        certificateModalExpires.textContent = "Expires on: " + cert.expires;
-        certificateModalID.textContent = "Certificate ID / Reference Number: " + cert.cerID;
-        certificateModal.classList.add("show");
+        certificateModalCompany.textContent = cert.company;
+        certificateModalIssued.textContent = cert.issued;
+        certificateModalExpires.textContent = cert.expires;
+        certificateModalID.textContent = cert.cerID;
+        openModal(certificateModal);
       });
       certificateContainer.appendChild(card);
     });
@@ -366,12 +446,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("div");
       card.className = "contact-card";
       card.innerHTML = `
-        <i class="${contact.icon}"></i>
-        <h3>${contact.name}</h3>
-        <p>${contact.desc}</p>
-        <a class="contact-btn" href="${contact.link}" target="_blank">
-          <i class="fas fa-external-link-alt" style="font-size:16px;"></i> ${contact.btn}
-        </a>`;
+        <div class="contact-card-top">
+          <i class="${contact.icon}"></i>
+          <div class="contact-card-info">
+            <h3>${contact.name}</h3>
+            <p>${contact.desc}</p>
+          </div>
+        </div>
+        <div class="contact-card-footer">
+          <a class="contact-btn" href="${contact.link}" target="_blank">
+            <i class="fas fa-external-link-alt"></i><span>${contact.btn}</span>
+          </a>
+        </div>`;
       contactContainer.appendChild(card);
     });
   } // end renderContent
