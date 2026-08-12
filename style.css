@@ -262,10 +262,10 @@ img {
 
 .hero-media-frame {
   width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1 / 1.08;
+  max-width: 364px;
+  /* aspect-ratio: 1 / 1.08; */
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   background: var(--bg-elevated);
   overflow: hidden;
   padding: 1px;
@@ -304,7 +304,7 @@ img {
 
 .skill i {
   font-size: 1.15rem;
-  color: var(--accent-hover);
+  color: #459BEC;
 }
 
 .skill:hover {
@@ -441,7 +441,7 @@ img {
 .projects-grid,
 .certificate-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
 }
 

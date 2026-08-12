@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${project.img}" alt="${project.name}"/>
         <div class="project-card-container">
           <h3>${project.name}</h3>
-          <p>${project.desc}</p>
+          <p style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${project.desc}</p>
           <div class="tags-container" style="padding-top:10px;">
             ${tagsHTML}
           </div>
